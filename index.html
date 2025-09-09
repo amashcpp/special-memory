@@ -1,144 +1,128 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Yap</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1f2e54, #4a9195);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #fff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amanyaz | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 50px 20px;
+      animation: fadeDown 1.5s ease-in-out;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #ddd;
+    }
+    nav {
+      margin: 20px 0;
+      animation: fadeUp 2s ease-in-out;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #00ffcc;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    section {
+      padding: 50px 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      animation: slideUp 1.2s ease forwards;
+      opacity: 0;
+    }
+    .card:nth-child(1) { animation-delay: 0.3s; }
+    .card:nth-child(2) { animation-delay: 0.6s; }
+    .card:nth-child(3) { animation-delay: 0.9s; }
+    footer {
+      padding: 20px;
+      background: rgba(0,0,0,0.4);
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #aaa;
+      animation: fadeIn 2s ease-in;
+    }
 
-        .login-container {
-            perspective: 1000px;
-        }
-
-        .login-box {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            width: 380px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transform-style: preserve-3d;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: rotateY(10deg);
-            }
-            to {
-                opacity: 1;
-                transform: rotateY(0deg);
-            }
-        }
-
-        .brand-logo {
-            font-size: 2.5em;
-            font-weight: 700;
-            margin-bottom: 5px;
-            letter-spacing: 2px;
-        }
-
-        .login-title {
-            font-size: 1.5em;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            border-radius: 50px;
-            color: #fff;
-            font-size: 1em;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .input-group input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .input-group input:focus {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .login-button {
-            width: 100%;
-            padding: 15px 20px;
-            background: #fff;
-            color: #1f2e54;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .login-button:hover {
-            background: #e0e0e0;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .register-link {
-            margin-top: 25px;
-            font-size: 0.9em;
-        }
-
-        .register-link a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .register-link a:hover {
-            color: #c0c0c0;
-            text-decoration: underline;
-        }
-    </style>
+    /* Animasyonlar */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
-            <h1 class="brand-logo">Markam</h1>
-            <h2 class="login-title">Giriş Yap</h2>
-            <form action="#" method="post">
-                <div class="input-group">
-                    <input type="text" id="username" name="username" placeholder="Kullanıcı Adı" required>
-                </div>
-                <div class="input-group">
-                    <input type="password" id="password" name="password" placeholder="Şifre" required>
-                </div>
-                <button type="submit" class="login-button">Giriş Yap</button>
-            </form>
-            <div class="register-link">
-                Hesabınız yok mu? <a href="#">Şimdi kaydolun</a>
-            </div>
-        </div>
+  <header>
+    <h1>Merhaba, ben Amanyaz 👋</h1>
+    <p>Yazılım geliştirici | C++ sever | Siber güvenlik yolunda</p>
+    <nav>
+      <a href="#about">Hakkımda</a>
+      <a href="#projects">Projeler</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <div class="card">
+      <h2>Hakkımda</h2>
+      <p>Ben 17 yaşındayım, programlama dilleri, yapay zeka ve siber güvenlik ile ilgileniyorum. 
+      Özellikle C++ dilinde çalışmaktan keyif alıyorum 🚀.</p>
     </div>
+  </section>
+
+  <section id="projects">
+    <div class="card">
+      <h2>Projelerim</h2>
+      <ul style="list-style:none; padding:0;">
+        <li>✔ Küçük C++ oyunları</li>
+        <li>✔ Basit algoritma çözümleri</li>
+        <li>✔ Web siteleri (GitHub Pages)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="card">
+      <h2>İletişim</h2>
+      <p>Bana ulaşmak için: <br>
+      <a href="mailto:seninmailin@example.com" style="color:#00ffcc;">📧 E-posta Gönder</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Amanyaz | Tüm Hakları Saklıdır
+  </footer>
 </body>
 </html>
-
